@@ -5,15 +5,15 @@ This template offers a basic structure to create a web application in nodejs wit
 ## Server
 The server runs on the http://localhost:3000. Opening this url, the server response is an json: `{ ok: true }`. This means that the server is working properly and ready to handle requests.
 
-## Dependencies
+## Tooling
 
-This project depends on the following packages:
+This project depends on the following tooling packages:
 
-- [node.js](https://github.com/nodejs/node#readme): A JavaScript runtime environment based on Chrome V8.
 - [swc](https://github.com/swc-project/swc#readme): A super fast JavaScript and TypeScript compiler written in Rust.
-- [eslint](https://github.com/eslint/eslint#readme): A static code analysis tool to identify problematic patterns found in JavaScript code.
+- [eslint](https://github.com/eslint/eslint#readme)+[prettier](https://github.com/prettier/prettier#readme): A static code analysis tool to identify problematic patterns found in JavaScript code.
 - [rimraf](https://github.com/isaacs/rimraf#readme): A package that provides a way to execute the command `rm -rf` on any platform.
-- [nodemon](https://github.com/remy/nodemon#readme): A tool that monitors changes in your project files and automatically restarts the server.
+- [nodemon](https://github.com/remy/nodemon#readme)+[chokidar](https://github.com/paulmillr/chokidar#readme): A tool that monitors changes in your project files and automatically restarts the server.
+- [@swc/register](https://github.com/swc-project/register#readme) : Compile Typescript files on the fly, used in dev task by nodemon.
 
 ## Installation
 
