@@ -1,73 +1,91 @@
 # node-swc-template
 
-This template offers a basic structure to create a web application in nodejs with the express framework. It uses the following tools to facilitate the development and optimization of the code: swc, typescript, eslint and prettier. These tools allow you to write code in typescript, transpile with high performance using swc, apply good style and formatting practices with eslint and prettier, and run the application with node and express.
+This template provides a foundational structure for creating web applications in Node.js with the Express framework. It leverages essential tools such as swc, TypeScript, ESLint, and Prettier to streamline development, ensuring high performance, adherence to coding standards, and efficient code optimization. The server responds on http://localhost:3000 with a JSON message: `{ ok: true }`, indicating proper functionality.
 
-## Server
-The server runs on the http://localhost:3000. Opening this url, the server response is an json: `{ ok: true }`. This means that the server is working properly and ready to handle requests.
+## Updates
+This template has undergone substantial improvements to enhance code quality, maintenance, and tooling integration. Key changes include:
 
-## Tooling
+- **Dependency Updates:** Updated versions of dependencies, including "@swc/cli," "@swc/core," and "@swc-node/register," to their latest releases.
 
+- **ESLint Configuration:** Simplified and refined ESLint configurations in the `.eslintrc.json` file, now extending `@guarapi/eslint-config-guarapi` while removing specific rules.
+
+- **VSCode Configuration:** Adjusted Visual Studio Code settings in the `settings.json` file, modifying ESLint action to "explicit" on code save.
+
+- **Prettier Configuration:** Introduced a specific Prettier configuration in the `package.json` file, referencing `@guarapi/eslint-config-guarapi/prettierrc.js`.
+
+- **Updates to npm Scripts:** Enhanced npm scripts, including the addition of the "types" script for executing TypeScript and "lint" script for linting.
+
+- **Versions of Development Dependencies:** Updated versions of development dependencies, such as ESLint, TypeScript, Prettier, among others. This template now utilizes **pnpm** as the package manager to manage dependencies more efficiently.
+
+These changes aim to improve code quality, maintenance, and the integration of linting and formatting tools within the "node-swc-template" project.
+
+## Project Structure
+### Tooling
 This project depends on the following tooling packages:
 
-- [swc](https://github.com/swc-project/swc#readme): A super fast JavaScript and TypeScript compiler written in Rust.
-- [eslint](https://github.com/eslint/eslint#readme)+[prettier](https://github.com/prettier/prettier#readme): A static code analysis tool to identify problematic patterns found in JavaScript code.
-- [rimraf](https://github.com/isaacs/rimraf#readme): A package that provides a way to execute the command `rm -rf` on any platform.
-- [nodemon](https://github.com/remy/nodemon#readme)+[chokidar](https://github.com/paulmillr/chokidar#readme): A tool that monitors changes in your project files and automatically restarts the server.
-- [@swc/register](https://github.com/swc-project/register#readme) : Compile Typescript files on the fly, used in dev task by nodemon.
+- [swc](https://github.com/swc-project/swc#readme): A high-speed JavaScript and TypeScript compiler written in Rust.
+- [eslint](https://github.com/eslint/eslint#readme) + [prettier](https://github.com/prettier/prettier#readme): Static code analysis tools identifying problematic patterns in JavaScript code.
+- [rimraf](https://github.com/isaacs/rimraf#readme): A package providing a platform-independent way to execute the `rm -rf` command.
+- [nodemon](https://github.com/remy/nodemon#readme): Tools monitoring project file changes and automatically restarting the server.
+- [@swc/register](https://github.com/swc-project/register#readme): Compiles TypeScript files on the fly, used in the development task by nodemon.
 
 ## Installation
-
-To install the project dependencies, run the following command:
+To install project dependencies, run the following command:
 
 ```bash
-npm i
+pnpm install
 ```
 
 ## Start
-To start production read code in dist, run the following command:
+To initiate the application in production, executing the code in the `dist` folder, run:
 
 ```bash
-npm start
+pnpm start
 ```
 
-Starts the application by running the index.js file in the dist folder.
+This command launches the application by executing the `index.js` file in the `dist` folder.
 
 ## Development
-
-To run the project in development mode, run the following command:
+To run the project in development mode, use:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-This will start nodemon, which will monitor the changes in the files and restart the server automatically.
+This starts nodemon, monitoring file changes and restarting the server automatically.
 
 ## Build
-
-To build the project for production, run the following command:
+To build the project for production, run:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-This will use swc to transpile the TypeScript files into JavaScript and place them in the dist folder.
+This uses swc to transpile TypeScript files into JavaScript, placing them in the `dist` folder.
 
 ## Clean
-
-To remove the artifacts, run the following command:
+To remove artifacts, run:
 
 ```bash
-npm run clean
+pnpm run clean
 ```
 
-Removes the dist folder, which contains the files generated by swc.
+This deletes the `dist` folder, containing files generated by swc.
 
 ## Lint
-
-To check if the code is following the eslint and prettier rules, run the following command:
+To check if the code adheres to ESLint and Prettier rules, run:
 
 ```bash
-npm run lint
+pnpm run lint
 ```
 
-This will show the possible errors and warnings in the code and suggest how to fix them.
+This displays potential errors and warnings in the code, along with suggestions for resolution.
+
+## Types
+To execute TypeScript and check types, run:
+
+```bash
+pnpm run types
+```
+
+This task ensures type correctness and validates TypeScript files in the project.
